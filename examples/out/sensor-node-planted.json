@@ -1,0 +1,243 @@
+{
+  "version": "0.1.0",
+  "counts": {
+    "error": 2,
+    "warning": 1,
+    "info": 2,
+    "pass": 8
+  },
+  "findings": [
+    {
+      "check": "cap-derating",
+      "severity": "pass",
+      "ref": "C1",
+      "message": "42% of 10 V rating (limit 50% X5R).",
+      "nets": [
+        "/Power/BATT+",
+        "GND"
+      ],
+      "working_v": 4.2,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "X5R",
+      "value": "22\u00b5F",
+      "rating_source": "Voltage field",
+      "rated_v": 10.0,
+      "ratio": 0.42,
+      "limit": 0.5
+    },
+    {
+      "check": "cap-derating",
+      "severity": "error",
+      "ref": "C2",
+      "message": "Rated 2.5 V but sees 3.3 V (132% of rating): over absolute rating.",
+      "nets": [
+        "/Sensor Node Core/3V3",
+        "GND"
+      ],
+      "working_v": 3.3,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "X5R",
+      "value": "22\u00b5F",
+      "rating_source": "Voltage field",
+      "rated_v": 2.5,
+      "ratio": 1.32,
+      "limit": 0.5
+    },
+    {
+      "check": "cap-derating",
+      "severity": "warning",
+      "ref": "C3",
+      "message": "52% of 10 V rating exceeds 50% X5R derating limit (needs >= 10.5 V part).",
+      "nets": [
+        "GND",
+        "Net-(D1-K)"
+      ],
+      "working_v": 5.25,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "X5R",
+      "value": "10\u00b5F",
+      "rating_source": "Voltage field",
+      "rated_v": 10.0,
+      "ratio": 0.525,
+      "limit": 0.5
+    },
+    {
+      "check": "cap-derating",
+      "severity": "info",
+      "ref": "C4",
+      "message": "Working voltage unknown (net Net-(J2-Pin_2) has no rail voltage); add it under `rails:` to check this part.",
+      "nets": [
+        "/Power/BATT+",
+        "Net-(J2-Pin_2)"
+      ]
+    },
+    {
+      "check": "cap-derating",
+      "severity": "pass",
+      "ref": "C5",
+      "message": "42% of 10 V rating (limit 50% X5R).",
+      "nets": [
+        "/Power/BATT+",
+        "GND"
+      ],
+      "working_v": 4.2,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "X5R",
+      "value": "10\u00b5F",
+      "rating_source": "Voltage field",
+      "rated_v": 10.0,
+      "ratio": 0.42,
+      "limit": 0.5
+    },
+    {
+      "check": "cap-derating",
+      "severity": "pass",
+      "ref": "C6",
+      "message": "33% of 10 V rating (limit 50% X5R).",
+      "nets": [
+        "/Sensor Node Core/3V3",
+        "GND"
+      ],
+      "working_v": 3.3,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "X5R",
+      "value": "10\u00b5F",
+      "rating_source": "Voltage field",
+      "rated_v": 10.0,
+      "ratio": 0.33,
+      "limit": 0.5
+    },
+    {
+      "check": "cap-derating",
+      "severity": "pass",
+      "ref": "C7",
+      "message": "21% of 16 V rating (limit 50% X7R).",
+      "nets": [
+        "/Sensor Node Core/3V3",
+        "GND"
+      ],
+      "working_v": 3.3,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "X7R",
+      "value": "0.1\u00b5F",
+      "rating_source": "Voltage field",
+      "rated_v": 16.0,
+      "ratio": 0.206,
+      "limit": 0.5
+    },
+    {
+      "check": "cap-derating",
+      "severity": "info",
+      "ref": "C8",
+      "message": "Working voltage unknown (net Net-(U4-EN) has no rail voltage); add it under `rails:` to check this part.",
+      "nets": [
+        "GND",
+        "Net-(U4-EN)"
+      ]
+    },
+    {
+      "check": "cap-derating",
+      "severity": "pass",
+      "ref": "C9",
+      "message": "21% of 16 V rating (limit 50% X7R).",
+      "nets": [
+        "/Sensor Node Core/3V3",
+        "GND"
+      ],
+      "working_v": 3.3,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "X7R",
+      "value": "0.1\u00b5F",
+      "rating_source": "Voltage field",
+      "rated_v": 16.0,
+      "ratio": 0.206,
+      "limit": 0.5
+    },
+    {
+      "check": "cap-derating",
+      "severity": "pass",
+      "ref": "C10",
+      "message": "21% of 16 V rating (limit 50% X7R).",
+      "nets": [
+        "/Sensor Node Core/3V3",
+        "GND"
+      ],
+      "working_v": 3.3,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "X7R",
+      "value": "0.1\u00b5F",
+      "rating_source": "Voltage field",
+      "rated_v": 16.0,
+      "ratio": 0.206,
+      "limit": 0.5
+    },
+    {
+      "check": "cap-derating",
+      "severity": "pass",
+      "ref": "C11",
+      "message": "21% of 16 V rating (limit 50% X7R).",
+      "nets": [
+        "/Sensor Node Core/3V3",
+        "GND"
+      ],
+      "working_v": 3.3,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "X7R",
+      "value": "0.1\u00b5F",
+      "rating_source": "Voltage field",
+      "rated_v": 16.0,
+      "ratio": 0.206,
+      "limit": 0.5
+    },
+    {
+      "check": "power-budget",
+      "severity": "pass",
+      "ref": "U1",
+      "message": "3V3: 500 mA of 2000 mA (25%).",
+      "rail": "3V3",
+      "regulator_max_ma": 2000.0,
+      "margin": 0.8,
+      "load_ma": 500.0,
+      "loads": [
+        {
+          "ref": "U4",
+          "ma": 500.0,
+          "source": "ESP32-WROOM-32E datasheet, recommended operating conditions"
+        }
+      ],
+      "regulator_source": "TI TPS63802 datasheet, Features"
+    },
+    {
+      "check": "regulator-feedback",
+      "severity": "error",
+      "ref": "U1",
+      "message": "Divider R2/R3 sets 5.51 V but rail 3V3 expects 3.3 V (>5% off).",
+      "vout": 5.51,
+      "target_v": 3.3,
+      "top": "R2",
+      "top_ohm": 511000.0,
+      "bottom": "R3",
+      "bottom_ohm": 51000.0,
+      "vref": 0.5,
+      "vref_source": "TI TPS63802 datasheet VFB = 500 mV"
+    }
+  ]
+}

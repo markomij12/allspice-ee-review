@@ -1,0 +1,62 @@
+name: "EE design review: capacitor derating & power budget"
+description: >
+  Checks every capacitor's rated voltage against the voltage across it (from the
+  netlist) using a per-dielectric derating rule, and optionally checks regulator
+  current budgets and feedback-divider output voltages. Writes a Markdown report
+  (and optional JSON) and fails the run on errors.
+inputs:
+  source_path:
+    description: "Hub mode: project file for BOM generation (.PrjPcb, .DSN, .SDAX, .CPM, .PRJ)."
+    default: ""
+  pcb_file:
+    description: "Hub mode: PCB file for netlist generation (e.g. .PcbDoc)."
+    default: ""
+  bom_file:
+    description: "Local mode: path to a BOM CSV in the workspace (e.g. produced by kicad-cli in an earlier step)."
+    default: ""
+  netlist_file:
+    description: "Local mode: KiCad .net (sexpr) or JSON {net: [REF.PIN]} netlist. Setting this selects local mode."
+    default: ""
+  config:
+    description: "YAML config with rails, derating table and optional power budget. See config.example.yml."
+    default: ""
+  output_file_name:
+    description: "Markdown report name."
+    default: "ee_review.md"
+  json_file_name:
+    description: "Optional JSON findings file name."
+    default: "ee_review.json"
+  fail_on:
+    description: "error | warning | never"
+    default: "error"
+  auth_token:
+    description: "AllSpice Hub token. Defaults to the run's token."
+    required: false
+    default: ${{ github.token }}
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - "--source_ref"
+    - ${{ github.sha }}
+    - "--allspice_hub_url"
+    - ${{ github.server_url }}
+    - "--source_path"
+    - ${{ inputs.source_path }}
+    - "--pcb_file"
+    - ${{ inputs.pcb_file }}
+    - "--bom_file"
+    - ${{ inputs.bom_file }}
+    - "--netlist_file"
+    - ${{ inputs.netlist_file }}
+    - "--config"
+    - ${{ inputs.config }}
+    - "--output_file"
+    - "${{ github.workspace }}/${{ inputs.output_file_name }}"
+    - "--json_file"
+    - "${{ github.workspace }}/${{ inputs.json_file_name }}"
+    - "--fail_on"
+    - ${{ inputs.fail_on }}
+    - ${{ github.repository }}
+  env:
+    ALLSPICE_AUTH_TOKEN: ${{ inputs.auth_token }}

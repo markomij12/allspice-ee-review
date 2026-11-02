@@ -1,0 +1,26 @@
+# halfmarble/NEAToBOARD (CERN-OHL-P). Capacitor ratings come from the real MPNs in BOM.csv.
+rails:
+  "3V3": 3.3
+  "3V3USB": 3.3
+  "VUSB": 5.25        # USB VBUS 5 V +5%
+  "VRAW": 5.25        # VUSB through D3 Schottky or VBAT (<= 4.2 V); worst case taken as VUSB
+  "VBAT": 4.2         # single-cell Li-ion max
+  # ESP32 GPIO/strapping nets are in the 3.3 V domain (ESP32 VDD33 max 3.6 V)
+  "IO32": 3.3
+  "IO33": 3.3
+  "RESET": 3.3
+  "Net-\\(C11-Pad1\\)": 4.2   # battery-sense divider node, bounded by VBAT/VUSB path (conservative)
+rail_pins:
+  "U2.16": 3.3        # CH340C VCC, fed from 3V3USB via D1 (worst case <= 3.3 V)
+ground_nets: [GND]
+power:
+  margin: 0.8
+  regulators:
+    - ref: U3
+      rail: "3V3"
+      max_current_ma: 500           # ME6211: "Maximum Output Current 500 mA (VIN=4.3 V, VOUT=3.3 V)"
+      source: "Microne ME6211 datasheet, Features"
+  loads:
+    - match: "U4"
+      current_ma: 500               # ESP32-WROOM-32D: supply must deliver >= 500 mA
+      source: "Espressif ESP32-WROOM-32D datasheet, Table 6"

@@ -1,0 +1,2 @@
+py-allspice>=4.3,<5
+pyyaml>=6

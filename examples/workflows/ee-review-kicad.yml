@@ -1,0 +1,22 @@
+# .allspice/workflows/ee-review.yml (KiCad repo): export BOM + netlist with kicad-cli, then run the check.
+name: EE design review
+on: [push, pull_request]
+jobs:
+  ee-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Export netlist + BOM (kicad-cli)
+        run: |
+          docker run --rm -v "$PWD:/w" -w /w kicad/kicad:9.0 sh -c '
+            kicad-cli sch export netlist --format kicadsexpr -o netlist.net hardware/board.kicad_sch &&
+            kicad-cli sch export bom --fields "Reference,Value,Footprint,MPN,Voltage,Dielectric" -o bom.csv hardware/board.kicad_sch'
+      - name: Capacitor derating / power budget
+        uses: https://hub.allspice.io/<owner>/ee-design-review@v0.1.0
+        with:
+          netlist_file: netlist.net
+          bom_file: bom.csv
+          config: .allspice/ee-review.yml
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with: {name: ee-review, path: "ee_review.*"}

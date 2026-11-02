@@ -1,0 +1,13 @@
+# Hub mode (Altium/OrCAD/...): py-allspice generates BOM + PCB netlist on the Hub.
+name: EE design review
+on: [push, pull_request]
+jobs:
+  ee-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: https://hub.allspice.io/<owner>/ee-design-review@v0.1.0
+        with:
+          source_path: Project.PrjPcb
+          pcb_file: Board.PcbDoc
+          config: .allspice/ee-review.yml

@@ -1,0 +1,269 @@
+{
+  "version": "0.1.0",
+  "counts": {
+    "error": 0,
+    "warning": 1,
+    "info": 0,
+    "pass": 12
+  },
+  "findings": [
+    {
+      "check": "cap-derating",
+      "severity": "pass",
+      "ref": "C1",
+      "message": "33% of 10 V rating (limit 50% X5R).",
+      "nets": [
+        "GND",
+        "Net-(D1-K)"
+      ],
+      "working_v": 3.3,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "X5R",
+      "value": "10uF",
+      "rating_source": "MPN decode (Samsung CL)",
+      "rated_v": 10,
+      "ratio": 0.33,
+      "limit": 0.5
+    },
+    {
+      "check": "cap-derating",
+      "severity": "pass",
+      "ref": "C6",
+      "message": "33% of 10 V rating (limit 50% X5R).",
+      "nets": [
+        "3V3",
+        "GND"
+      ],
+      "working_v": 3.3,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "X5R",
+      "value": "10uF",
+      "rating_source": "MPN decode (Samsung CL)",
+      "rated_v": 10,
+      "ratio": 0.33,
+      "limit": 0.5
+    },
+    {
+      "check": "cap-derating",
+      "severity": "pass",
+      "ref": "C2",
+      "message": "21% of 16 V rating (limit 50% X7R).",
+      "nets": [
+        "GND",
+        "Net-(D1-K)"
+      ],
+      "working_v": 3.3,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "X7R",
+      "value": "1uF",
+      "rating_source": "MPN decode (Samsung CL)",
+      "rated_v": 16,
+      "ratio": 0.206,
+      "limit": 0.5
+    },
+    {
+      "check": "cap-derating",
+      "severity": "pass",
+      "ref": "C3",
+      "message": "33% of 16 V rating (limit 50% X7R).",
+      "nets": [
+        "GND",
+        "VUSB"
+      ],
+      "working_v": 5.25,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "X7R",
+      "value": "1uF",
+      "rating_source": "MPN decode (Samsung CL)",
+      "rated_v": 16,
+      "ratio": 0.328,
+      "limit": 0.5
+    },
+    {
+      "check": "cap-derating",
+      "severity": "pass",
+      "ref": "C4",
+      "message": "33% of 16 V rating (limit 50% X7R).",
+      "nets": [
+        "GND",
+        "VRAW"
+      ],
+      "working_v": 5.25,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "X7R",
+      "value": "1uF",
+      "rating_source": "MPN decode (Samsung CL)",
+      "rated_v": 16,
+      "ratio": 0.328,
+      "limit": 0.5
+    },
+    {
+      "check": "cap-derating",
+      "severity": "pass",
+      "ref": "C5",
+      "message": "21% of 16 V rating (limit 50% X7R).",
+      "nets": [
+        "3V3",
+        "GND"
+      ],
+      "working_v": 3.3,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "X7R",
+      "value": "1uF",
+      "rating_source": "MPN decode (Samsung CL)",
+      "rated_v": 16,
+      "ratio": 0.206,
+      "limit": 0.5
+    },
+    {
+      "check": "cap-derating",
+      "severity": "pass",
+      "ref": "C7",
+      "message": "21% of 16 V rating (limit 50% X7R).",
+      "nets": [
+        "3V3",
+        "GND"
+      ],
+      "working_v": 3.3,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "X7R",
+      "value": "1uF",
+      "rating_source": "MPN decode (Samsung CL)",
+      "rated_v": 16,
+      "ratio": 0.206,
+      "limit": 0.5
+    },
+    {
+      "check": "cap-derating",
+      "severity": "pass",
+      "ref": "C8",
+      "message": "21% of 16 V rating (limit 50% X7R).",
+      "nets": [
+        "GND",
+        "RESET"
+      ],
+      "working_v": 3.3,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "X7R",
+      "value": "1uF",
+      "rating_source": "MPN decode (Samsung CL)",
+      "rated_v": 16,
+      "ratio": 0.206,
+      "limit": 0.5
+    },
+    {
+      "check": "cap-derating",
+      "severity": "pass",
+      "ref": "C11",
+      "message": "26% of 16 V rating (limit 50% X7R).",
+      "nets": [
+        "GND",
+        "Net-(C11-Pad1)"
+      ],
+      "working_v": 4.2,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "X7R",
+      "value": "1uF",
+      "rating_source": "MPN decode (Samsung CL)",
+      "rated_v": 16,
+      "ratio": 0.263,
+      "limit": 0.5
+    },
+    {
+      "check": "cap-derating",
+      "severity": "pass",
+      "ref": "C12",
+      "message": "21% of 16 V rating (limit 50% X7R).",
+      "nets": [
+        "3V3",
+        "GND"
+      ],
+      "working_v": 3.3,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "X7R",
+      "value": "1uF",
+      "rating_source": "MPN decode (Samsung CL)",
+      "rated_v": 16,
+      "ratio": 0.206,
+      "limit": 0.5
+    },
+    {
+      "check": "cap-derating",
+      "severity": "pass",
+      "ref": "C9",
+      "message": "7% of 50 V rating (limit 80% C0G).",
+      "nets": [
+        "GND",
+        "IO33"
+      ],
+      "working_v": 3.3,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "C0G",
+      "value": "12pF",
+      "rating_source": "MPN decode (Yageo CC)",
+      "rated_v": 50,
+      "ratio": 0.066,
+      "limit": 0.8
+    },
+    {
+      "check": "cap-derating",
+      "severity": "pass",
+      "ref": "C10",
+      "message": "7% of 50 V rating (limit 80% C0G).",
+      "nets": [
+        "GND",
+        "IO32"
+      ],
+      "working_v": 3.3,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "C0G",
+      "value": "12pF",
+      "rating_source": "MPN decode (Yageo CC)",
+      "rated_v": 50,
+      "ratio": 0.066,
+      "limit": 0.8
+    },
+    {
+      "check": "power-budget",
+      "severity": "warning",
+      "ref": "U3",
+      "message": "3V3: budgeted load 500 mA is 100% of U3 max 500 mA (design margin 80%).",
+      "rail": "3V3",
+      "regulator_max_ma": 500.0,
+      "margin": 0.8,
+      "load_ma": 500.0,
+      "loads": [
+        {
+          "ref": "U4",
+          "ma": 500.0,
+          "source": "Espressif ESP32-WROOM-32D datasheet, Table 6"
+        }
+      ],
+      "regulator_source": "Microne ME6211 datasheet, Features"
+    }
+  ]
+}

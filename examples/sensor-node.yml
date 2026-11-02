@@ -1,0 +1,20 @@
+# shyver/sensor-node (MIT). Rail voltages are worst-case DC, with sources.
+rails:
+  "3V3": 3.3          # TPS63802 output set by R2/R3 divider (VFB 0.5 V, TI SLVSEJ2 datasheet)
+  "BATT+": 4.2        # TP4056-42 charge termination voltage 4.2 V (part number suffix / datasheet)
+rail_pins:
+  "J1.A4": 5.25       # USB VBUS, 5 V +5% (USB 2.0 spec upper limit)
+  "U2.4": 5.25        # TP4056 VCC: VBUS through R4 (0.4 ohm); worst case taken as VBUS
+ground_nets: [GND]
+power:
+  margin: 0.8
+  regulators:
+    - ref: U1
+      rail: "3V3"
+      max_current_ma: 2000          # TPS63802: 2 A for VIN >= 2.3 V, VOUT = 3.3 V (TI datasheet)
+      source: "TI TPS63802 datasheet, Features"
+      feedback: {pin: "4", vref: 0.5, tolerance: 0.05, source: "TI TPS63802 datasheet VFB = 500 mV"}
+  loads:
+    - match: "U4"
+      current_ma: 500               # Espressif: minimum current delivered by power supply 500 mA
+      source: "ESP32-WROOM-32E datasheet, recommended operating conditions"

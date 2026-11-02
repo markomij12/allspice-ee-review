@@ -1,0 +1,225 @@
+{
+  "version": "0.1.0",
+  "counts": {
+    "error": 0,
+    "warning": 9,
+    "info": 2,
+    "pass": 2
+  },
+  "findings": [
+    {
+      "check": "cap-derating",
+      "severity": "warning",
+      "ref": "C1",
+      "message": "No voltage rating in BOM (Voltage field, MPN, or value) for a part across 4.2 V; cannot verify derating.",
+      "rated_v": null,
+      "nets": [
+        "/Power/BATT+",
+        "GND"
+      ],
+      "working_v": 4.2,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "UNKNOWN",
+      "value": "22\u00b5F",
+      "rating_source": null
+    },
+    {
+      "check": "cap-derating",
+      "severity": "warning",
+      "ref": "C2",
+      "message": "No voltage rating in BOM (Voltage field, MPN, or value) for a part across 3.3 V; cannot verify derating.",
+      "rated_v": null,
+      "nets": [
+        "/Power/3V3",
+        "GND"
+      ],
+      "working_v": 3.3,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "UNKNOWN",
+      "value": "22\u00b5F",
+      "rating_source": null
+    },
+    {
+      "check": "cap-derating",
+      "severity": "warning",
+      "ref": "C3",
+      "message": "No voltage rating in BOM (Voltage field, MPN, or value) for a part across 5.25 V; cannot verify derating.",
+      "rated_v": null,
+      "nets": [
+        "GND",
+        "Net-(D1-A)"
+      ],
+      "working_v": 5.25,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "UNKNOWN",
+      "value": "10\u00b5F",
+      "rating_source": null
+    },
+    {
+      "check": "cap-derating",
+      "severity": "info",
+      "ref": "C4",
+      "message": "Working voltage unknown (net Net-(J2-Pin_2) has no rail voltage); add it under `rails:` to check this part.",
+      "nets": [
+        "/Power/BATT+",
+        "Net-(J2-Pin_2)"
+      ]
+    },
+    {
+      "check": "cap-derating",
+      "severity": "warning",
+      "ref": "C5",
+      "message": "No voltage rating in BOM (Voltage field, MPN, or value) for a part across 4.2 V; cannot verify derating.",
+      "rated_v": null,
+      "nets": [
+        "/Power/BATT+",
+        "GND"
+      ],
+      "working_v": 4.2,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "UNKNOWN",
+      "value": "10\u00b5F",
+      "rating_source": null
+    },
+    {
+      "check": "cap-derating",
+      "severity": "warning",
+      "ref": "C6",
+      "message": "No voltage rating in BOM (Voltage field, MPN, or value) for a part across 3.3 V; cannot verify derating.",
+      "rated_v": null,
+      "nets": [
+        "/Power/3V3",
+        "GND"
+      ],
+      "working_v": 3.3,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "UNKNOWN",
+      "value": "10\u00b5F",
+      "rating_source": null
+    },
+    {
+      "check": "cap-derating",
+      "severity": "warning",
+      "ref": "C7",
+      "message": "No voltage rating in BOM (Voltage field, MPN, or value) for a part across 3.3 V; cannot verify derating.",
+      "rated_v": null,
+      "nets": [
+        "/Power/3V3",
+        "GND"
+      ],
+      "working_v": 3.3,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "UNKNOWN",
+      "value": "0.1\u00b5F",
+      "rating_source": null
+    },
+    {
+      "check": "cap-derating",
+      "severity": "info",
+      "ref": "C8",
+      "message": "Working voltage unknown (net Net-(U4-EN) has no rail voltage); add it under `rails:` to check this part.",
+      "nets": [
+        "GND",
+        "Net-(U4-EN)"
+      ]
+    },
+    {
+      "check": "cap-derating",
+      "severity": "warning",
+      "ref": "C9",
+      "message": "No voltage rating in BOM (Voltage field, MPN, or value) for a part across 3.3 V; cannot verify derating.",
+      "rated_v": null,
+      "nets": [
+        "/Power/3V3",
+        "GND"
+      ],
+      "working_v": 3.3,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "UNKNOWN",
+      "value": "0.1\u00b5F",
+      "rating_source": null
+    },
+    {
+      "check": "cap-derating",
+      "severity": "warning",
+      "ref": "C10",
+      "message": "No voltage rating in BOM (Voltage field, MPN, or value) for a part across 3.3 V; cannot verify derating.",
+      "rated_v": null,
+      "nets": [
+        "/Power/3V3",
+        "GND"
+      ],
+      "working_v": 3.3,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "UNKNOWN",
+      "value": "0.1\u00b5F",
+      "rating_source": null
+    },
+    {
+      "check": "cap-derating",
+      "severity": "warning",
+      "ref": "C11",
+      "message": "No voltage rating in BOM (Voltage field, MPN, or value) for a part across 3.3 V; cannot verify derating.",
+      "rated_v": null,
+      "nets": [
+        "/Power/3V3",
+        "GND"
+      ],
+      "working_v": 3.3,
+      "voltage_basis": [
+        "config"
+      ],
+      "dielectric": "UNKNOWN",
+      "value": "0.1\u00b5F",
+      "rating_source": null
+    },
+    {
+      "check": "power-budget",
+      "severity": "pass",
+      "ref": "U1",
+      "message": "3V3: 500 mA of 2000 mA (25%).",
+      "rail": "3V3",
+      "regulator_max_ma": 2000.0,
+      "margin": 0.8,
+      "load_ma": 500.0,
+      "loads": [
+        {
+          "ref": "U4",
+          "ma": 500.0,
+          "source": "ESP32-WROOM-32E datasheet, recommended operating conditions"
+        }
+      ],
+      "regulator_source": "TI TPS63802 datasheet, Features"
+    },
+    {
+      "check": "regulator-feedback",
+      "severity": "pass",
+      "ref": "U1",
+      "message": "Divider R2/R3 sets 3.31 V (rail 3V3 3.3 V).",
+      "vout": 3.308,
+      "target_v": 3.3,
+      "top": "R2",
+      "top_ohm": 511000.0,
+      "bottom": "R3",
+      "bottom_ohm": 91000.0,
+      "vref": 0.5,
+      "vref_source": "TI TPS63802 datasheet VFB = 500 mV"
+    }
+  ]
+}
